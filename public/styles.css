@@ -1,0 +1,29 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.app{
+    background-color: #FDFCFC;
+}
+
+.header {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    background-image: linear-gradient(to right,#983732,white );
+    justify-content:space-between;
+    color: aliceblue;
+    margin-bottom: 40px;
+}
+
+.header--logoText{
+    display: flex;
+    align-items: center;
+}
+
+.header--img{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
