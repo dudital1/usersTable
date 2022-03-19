@@ -43,9 +43,8 @@ export default function Table() {
 
   // styles for the whole tables
   const tableStyles = {
-    width: "80%",
+    width: "100%",
     margin: "auto",
-    minWidth: "400px",
     maxWidth: "1200px",
     backgroundColor: "#FBF8F8",
     borderRadius: "10px",
@@ -136,3 +135,5 @@ export default function Table() {
     </div>
   );
 }
+
+

@@ -72,7 +72,7 @@ export default function UserDetails() {
               <PersonPinCircleOutlinedIcon // Icon for the location pin on the map
                 lat={coordinates.lat}
                 lng={coordinates.lng}
-                style={{ color: "#993833" }}
+                style={{ color: "#993833" , padding:'10px' }}
               />
             </GoogleMapReact>
           </div>

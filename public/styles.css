@@ -13,7 +13,6 @@
     background-image: linear-gradient(to right,#983732,white );
     justify-content:space-between;
     color: aliceblue;
-    width: 100%;
     min-width: 400px;
 }
 
@@ -29,21 +28,10 @@
     margin-left: 20px;
 }
 
-.data--grid {
-    display: flex;
-    height: 800px;
-    width: 80%;
-    margin: auto 0px;
-    min-width: 400px;
-
-}
-
-
 .user--profile{
     display: flex;
     flex-direction: column;
     width: 70%;
-    width: 600px;
     min-height: 400px;
     height: 600px;
     margin: auto;
@@ -65,14 +53,8 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 670px) {
-    .data--grid {
-        width: fit-content; 
-        height: fit-content;    
-    }
+@media screen and (max-width: 600px) {
     .user--profile{
-        width: fit-content; 
-        height: fit-content;
-        padding: 30px;
+        width: 100%;
     }
   }
