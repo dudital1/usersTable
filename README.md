@@ -1,14 +1,13 @@
-## This project making use of https://randomuser.me/documentation#results api in order to fetch random users and present them in a table,
-## each column of the table is sortable and filterable. The table also includes pagination, every page send a new request to the api 
-## in order to fetch 10 new random users. 
-## once you click on a user(row) you redirected to userDetails page, where you can see the user's information and his location 
-## on a map(also provided by the api), using google maps api.   
+This project making use of https://randomuser.me/documentation#results api in order to fetch random users and present them in a table,
+each column of the table is sortable and filterable. The table also includes pagination, every page send a new request to the api 
+in order to fetch 10 new random users. 
+once you click on a user(row) you redirected to userDetails page, where you can see the user's information and his location 
+on a map(also provided by the api), using google maps api.   
 
-# ** after cloning the project run 'npm install' **
+## ** after cloning the project run 'npm install' **
 
-
-### In userDetails.js file there is environment variable 'REACT_APP_GOOGLE_MAPS_API_KEY', you should go to 
-### https://developers.google.com/maps/documentation/javascript/overview and generate your own key
+In userDetails.js file there is environment variable 'REACT_APP_GOOGLE_MAPS_API_KEY', you should go to 
+https://developers.google.com/maps/documentation/javascript/overview and generate your own key
 
 
 # Getting Started with Create React App
