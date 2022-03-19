@@ -13,7 +13,7 @@
     background-image: linear-gradient(to right,#983732,white );
     justify-content:space-between;
     color: aliceblue;
-    margin-bottom: 40px;
+    min-width: 600px;
 }
 
 .header--logoText{
@@ -27,3 +27,32 @@
     margin-right: 10px;
     margin-left: 20px;
 }
+
+.data--grid {
+    display: flex;
+    height: 800px;
+    min-width: 600px;
+    margin: auto 0px;
+}
+
+
+.user--profile{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    min-width: 600px;
+    min-height: 500px;
+    height: 600px;
+    margin: auto;
+    background-color: #FBF8F8;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.user--picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

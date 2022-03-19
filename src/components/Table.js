@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Link } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
+import { useNavigate } from "react-router-dom";         // react-router-dom@6 version of useHistory
 
 const ROW_COUNT = 5000;                                 // api users length
 
+
 export default function Table() {   
 
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);               // holds the current users  
   const [page , setPage] = useState(1);                 // holds the current page (in order to query the api's server)
 
   useEffect(() => {
-    fetch(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`)    // inserting the page into the api url   
+    fetch(`https://randomuser.me/api/?page=${page}&results=10&seed=dudiTal`)    // inserting the page into the api url   
       .then((res) => res.json())
       .then((data) => {
         const usersData = [];
         data.results.forEach((user) => {
-          const { name, picture, email, gender, dob } = user;       // destructing the wanted properties from the raw user data 
+          const { name, picture, email, gender, dob , login } = user;       // destructing the wanted properties from the raw user data 
           const userObject = {                                      // holds the required information for each user
             fullName: `${name.first} ${name.last}`,
             age: dob.age,
             id: email,
             picture: picture.thumbnail,
             gender: gender,
+            username: login.username
           };
           usersData.push(userObject);
         });
@@ -45,24 +49,26 @@ export default function Table() {
     maxWidth: "1200px",
     backgroundColor: "#FBF8F8",
     borderRadius: "10px",
+    display: 'flex',
+    flexDirection: 'column',
   };
 
   const columns = [                         // holds all the columns headers
     {
       field: "picture",
       headerName: "Picture",
-      renderCell: (params) => {             // function that renders the layout of the cell
+      renderCell: (params) => {             // function that re-renders the layout of the cell
         return (                            // link to the users page
-          <Link href="">                    
-            <Avatar src={params.value} /> 
-          </Link>
+            <Avatar src={params.value}/> 
         );
       },
-      flex: 1,                              // flex property to distribute the width of the columns 
+      flex: 1,                              // flex property to distribute the width of the columns
+      filterable: false,
+      sortable: false                           
     },
     { field: "fullName", headerName: "Full Name", flex: 2 },
     { field: "age", headerName: "Age", flex: 1 },
-    { field: "gender", headerName: "Gender", flex: 1 },
+    { field: "gender", headerName: "Gender", flex: 1 , filterable: false },
     {
       field: "id",
       headerName: "Email",
@@ -72,6 +78,10 @@ export default function Table() {
           <Link
             href={`mailto:${params.value}`}
             style={{ textDecoration: "none", color: "#983732" }}
+            onClick={(event) => {
+                event.stopPropagation();
+              }
+            }
           >
             <div>{params.value}</div>
           </Link>
@@ -84,8 +94,14 @@ export default function Table() {
       setPage(++newPage);                   //datagrid pages are 0 based, and api calls are "1 based" () 
   }
 
+  function redirectToUserPage(GridRowParams){
+    const username = GridRowParams.row.username
+      navigate(`/users/${username}/${page}`);
+  }
+
   return (
     <div style={tableStyles}>
+      <h1 style={{margin:'auto' , padding:'20px 0px'}}>All Users</h1>
       <DataGrid
         autoHeight={true}                   // handle table height tom match number of rows   
         rows={users}                        // initialize rows to users(handled by state)
@@ -99,7 +115,7 @@ export default function Table() {
         paginationMode="server"             // manualy handle pagination functionality 
         rowCount={ROW_COUNT}                // max rows declared on the top of the file
         onPageChange={handlePageUp}         // function that updated the page
-        // loading={true}
+        onRowClick={redirectToUserPage}
       />
     </div>
   );

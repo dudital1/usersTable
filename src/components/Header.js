@@ -1,7 +1,10 @@
 import React from 'react';
 import moveoIcon from '../images/moveoIcon.webp';
 
+
 export default function Header() {
+
+    
     return (
         <nav className="header">
             <div className='header--logoText'>
