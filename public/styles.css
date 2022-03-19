@@ -14,6 +14,7 @@
     justify-content:space-between;
     color: aliceblue;
     width: 100%;
+    min-width: 400px;
 }
 
 .header--logoText{
@@ -33,6 +34,8 @@
     height: 800px;
     width: 80%;
     margin: auto 0px;
+    min-width: 400px;
+
 }
 
 
@@ -48,6 +51,7 @@
     align-items: center;
     justify-content: space-around;
     padding: 30px;
+    min-width: 400px;
 }
 
 .user--picture{
@@ -63,10 +67,12 @@
 
 @media screen and (max-width: 670px) {
     .data--grid {
-        width: 100%;
+        width: fit-content; 
+        height: fit-content;    
     }
     .user--profile{
-        width: 100%;
+        width: fit-content; 
+        height: fit-content;
         padding: 30px;
     }
   }
