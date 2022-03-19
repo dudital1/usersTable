@@ -13,7 +13,7 @@
     background-image: linear-gradient(to right,#983732,white );
     justify-content:space-between;
     color: aliceblue;
-    min-width: 600px;
+    width: 100%;
 }
 
 .header--logoText{
@@ -31,7 +31,7 @@
 .data--grid {
     display: flex;
     height: 800px;
-    min-width: 600px;
+    width: 80%;
     margin: auto 0px;
 }
 
@@ -40,8 +40,8 @@
     display: flex;
     flex-direction: column;
     width: 70%;
-    min-width: 600px;
-    min-height: 500px;
+    width: 600px;
+    min-height: 400px;
     height: 600px;
     margin: auto;
     background-color: #FBF8F8;
@@ -61,3 +61,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 670px) {
+    .data--grid {
+        width: 100%;
+    }
+    .user--profile{
+        width: 100%;
+        padding: 30px;
+    }
+  }

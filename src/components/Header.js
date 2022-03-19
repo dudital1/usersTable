@@ -7,7 +7,7 @@ export default function Header() {
         <nav className="header">
             <div className='header--logoText'>
                 <img className='header--img' src={moveoIcon} alt='moveoIcon'></img>
-                <h2>Users assignment</h2>
+                <h3>Users assignment</h3>
             </div>
         </nav>
     )
