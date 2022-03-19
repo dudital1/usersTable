@@ -45,7 +45,7 @@ export default function Table() {
   const tableStyles = {
     width: "80%",
     margin: "auto",
-    minWidth: "600px",
+    minWidth: "400px",
     maxWidth: "1200px",
     backgroundColor: "#FBF8F8",
     borderRadius: "10px",
