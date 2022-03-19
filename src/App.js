@@ -15,12 +15,10 @@ function App() {
     <Router>
         <Header />
         <Routes >
-          <Route path="/" element={<Navigate to="/users" replace />}/> 
+          <Route path="/" element={<Navigate to="/users" replace />}/>
           <Route path="/users" element={<Table />}/>
           <Route path="/users/:username/:page" element={<UserDetails />} />
         </Routes >
-        {/* <Header />
-        <Table /> */}
     </Router>
     </div>
  
